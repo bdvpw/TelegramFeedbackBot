@@ -28,6 +28,6 @@ getFeedback.chatType('private').on('message', (ctx) => {
   // We record the user and forward the user.
   if (userCooldown !== null) usersLeftReview.set(ctx.from.id, Date.now())
   dManager.send(reviewPublished, tags).catch(console.error)
-  ctx.forwardMessage(chatIdWithReviews).catch(console.error)
-  ctx.forwardMessage(channelIdWithReviews).catch(console.error)
+  if (chatIdWithReviews) ctx.forwardMessage(chatIdWithReviews).catch(console.error)
+  if (channelIdWithReviews) ctx.forwardMessage(channelIdWithReviews).catch(console.error)
 })

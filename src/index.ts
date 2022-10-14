@@ -1,6 +1,6 @@
 import { config } from 'dotenv'
 import { access } from 'fs'
-import { DisableRootVerification } from './config/basic.json'
+import { chatIdWithReviews, channelIdWithReviews, DisableRootVerification } from './config/basic.json'
 
 console.log('[PROJECT] Starting...')
 access('package.json', (err) => {
@@ -14,6 +14,10 @@ This behavior is highly discouraged, please go to the directory with the package
 However, if you understand all the risks, you can set the "DisableRootVerification" option to true`)
       process.exit()
     }
+  }
+
+  if (!channelIdWithReviews && !chatIdWithReviews) {
+    console.warn('[WARN] The "chatIdWithReviews" and "channelIdWithReviews" parameters are set to null. Reviews will not be forwarded anywhere.')
   }
   config()
   require('./telegramClient')
