@@ -1,12 +1,13 @@
 import { MultilingualDialogues, languages } from '../interfaces/MultilingualDialogues'
-import { Other } from 'grammy/out/core/api'
 import { RawApi } from 'grammy'
+import { Other } from 'grammy/out/core/api'
 import bot from '../telegramClient'
 
 interface Tags {
   [key: string]: string
 }
 
+// Information about who has what language.
 export const userLanguages: Map<number, languages> = new Map()
 
 /** This class is responsible for sending messages in different languages. */
