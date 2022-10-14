@@ -1,0 +1,22 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Bot run!",
+            "type": "node",
+            "request": "launch",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "program": "${workspaceFolder}/build/index.js",
+            "preLaunchTask": "yarn run build",
+            "outFiles": [
+                "${workspaceFolder}/build/*.js.map",
+                "${workspaceFolder}/build/**/*.js.map",
+                "${workspaceFolder}/build/**/**/*.js.map",
+                "${workspaceFolder}/build/**/**/**/*.js.map"
+            ],
+            "runtimeVersion": "16.18.0"
+        }
+    ]
+}

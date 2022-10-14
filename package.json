@@ -1,6 +1,6 @@
 {
   "name": "feedback-tgbot",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "A telegram bot that accepts feedback from users and forwards it to the team.",
   "main": "./build/index.js",
   "repository": "https://github.com/bdvpw/feedback-tgbot",
