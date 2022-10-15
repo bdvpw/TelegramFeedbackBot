@@ -1,4 +1,11 @@
-import { chatIdWithReviews, channelIdWithReviews, userCooldown } from '../../config/basic.json'
+import { chatIdWithReviews,
+  channelIdWithReviews,
+  userCooldown,
+  attachedImage,
+  minimumNumberOfCharactersInAReview,
+  maximumNumberOfCharactersInAReview
+} from '../../config/basic.json'
+
 import { DialogManager, userLanguages } from '../../classes/DialogManager'
 import generateBasicDialogTags from '../../utils/generateBasicDialogTags'
 import { Composer } from 'grammy'
@@ -23,7 +30,7 @@ getFeedback.chatType('private').on('message', (ctx) => {
 
   // If the user did not attach a photo or wrote too short a review.
   const msgContent = ctx.message.text ?? ctx.message.caption
-  if (!msgContent || msgContent.length < 20 || msgContent.length > 2040 || !ctx.message.photo) return dManager.send(shortMessage, tags)
+  if (!msgContent || msgContent.length < minimumNumberOfCharactersInAReview || msgContent.length > maximumNumberOfCharactersInAReview || (attachedImage && !ctx.message.photo)) return dManager.send(shortMessage, tags)
 
   // We record the user and forward the user.
   if (userCooldown !== null) usersLeftReview.set(ctx.from.id, Date.now())

@@ -56,6 +56,21 @@ describe(`Type checking in ${BASIC_CONFIG_PATH}`, function () {
   })
 
   checkType('DisableRootVerification', ['boolean'])
+  checkType('attachedImage', ['boolean'])
+  checkType('minimumNumberOfCharactersInAReview', ['number'])
+  checkType('maximumNumberOfCharactersInAReview', ['number'])
+  it('Checking minimumNumberOfCharactersInAReview and maximumNumberOfCharactersInAReview', function (done) {
+    if (isNaN(basicConfig?.minimumNumberOfCharactersInAReview)) throw TypeError('The "minimumNumberOfCharactersInAReview" parameter does not exist or has a non-numeric type.')
+    if (isNaN(basicConfig?.maximumNumberOfCharactersInAReview)) throw TypeError('The "maximumNumberOfCharactersInAReview" parameter does not exist or has a non-numeric type.')
+
+    const min = Number(basicConfig?.minimumNumberOfCharactersInAReview)
+    const max = Number(basicConfig?.maximumNumberOfCharactersInAReview)
+    if (min < 0) throw Error('The minimum value cannot be negative!')
+    if (max < 0) throw Error('The maximum value cannot be negative!')
+    if (max === 0) throw Error('The maximum value cannot be zero!')
+    if (min > max) throw Error('The minimum value is set higher than the maximum.')
+    done()
+  })
   checkType('chatIdWithReviews', ['string', 'number'], true)
   checkType('channelIdWithReviews', ['string', 'number'], true)
   checkType('userCooldown', ['number'], true)
