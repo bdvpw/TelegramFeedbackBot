@@ -1,20 +1,28 @@
 {
   "name": "feedback-tgbot",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A telegram bot that accepts feedback from users and forwards it to the team.",
-  "main": "./build/index.js",
+  "main": "./src/index.ts",
   "repository": "https://github.com/bdvpw/feedback-tgbot",
   "author": "Жора Змейкин",
   "scripts": {
-    "start": "node build/index.js",
-    "build": "tsc --watch false"
+    "start": "ts-node .",
+    "build_start": "node build/index.js",
+    "build": "tsc --watch false",
+    "configTest": "mocha src/tests/correctnessOfConfigs.test.ts --exit",
+    "dialogueTagTest": "mocha src/tests/dialogueTag.test.ts",
+    "dialogueTest": "mocha src/tests/dialogues.test.ts"
   },
   "dependencies": {
+    "@types/mocha": "^10.0.0",
     "@types/node": "*",
     "@types/node-fetch": "^2.6.2",
     "@typescript-eslint/parser": "^5.39.0",
     "dotenv": "^16.0.3",
-    "grammy": "^1.11.2"
+    "eslint-plugin-mocha": "^10.1.0",
+    "grammy": "^1.11.2",
+    "mocha": "^10.0.0",
+    "ts-node": "^10.9.1"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.0.0",

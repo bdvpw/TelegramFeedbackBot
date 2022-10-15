@@ -34,7 +34,8 @@ export class DialogManager {
   static replaceTags (text: string, tags: Tags): string {
     const keys = Object.keys(tags)
     for (const tag of keys) {
-      text = text.replace('{' + tag + '}', tags[tag])
+      const regex = new RegExp(`{${tag}}`, 'g')
+      text = text.replace(regex, tags[tag])
     }
     return text
   }
@@ -55,11 +56,10 @@ export class DialogManager {
         allow_sending_without_reply: true
       }, other))
     } catch (err) {
-      console.error(`[DIALOG_MANAGER] Some mistake has occurred.
-Chat ID: ${this.chatId}
-Message ID: ${String(this.messageId)}
-Error:
-${String(err)}`)
+      console.error(`\n[DIALOG_MANAGER] Some mistake has occurred.
+>> Chat ID: ${this.chatId}
+>> Message ID: ${this.messageId}
+Error: ${String(err.stack)}`)
     }
   }
 }

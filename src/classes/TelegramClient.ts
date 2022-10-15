@@ -6,6 +6,7 @@ import commandsInfo from '../config/commandsInfo'
 class TelegramClient extends Bot {
   /** Activates the error interceptor, connects the bot to Telegram and uploads commands. */
   public login (): void {
+    if (process.env.STOP_BOT_LOGIN) return
     this.catch((err: unknown) => {
       console.error(err)
       console.error('>>> Some kind of error was intercepted.')

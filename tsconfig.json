@@ -30,7 +30,7 @@
       "disableSizeLimit": true,
       "emitBOM": false,
       "emitDecoratorMetadata": false,
-      "esModuleInterop": false,
+      "esModuleInterop": true,
       "experimentalDecorators": false,
       "forceConsistentCasingInFileNames": true,
       "inlineSources": false,

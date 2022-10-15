@@ -19,6 +19,7 @@ However, if you understand all the risks, you can set the "DisableRootVerificati
   if (!channelIdWithReviews && !chatIdWithReviews) {
     console.warn('[WARN] The "chatIdWithReviews" and "channelIdWithReviews" parameters are set to null. Reviews will not be forwarded anywhere.')
   }
+
   config()
   require('./telegramClient')
 })

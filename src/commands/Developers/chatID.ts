@@ -5,5 +5,5 @@ cmd
   .command('chatID')
   .filter((ctx: Context) => ctx.chat?.type === 'group' || ctx.chat?.type === 'supergroup')
   .use((ctx) => {
-    ctx.reply(`Chat ID: ${String(ctx.chat.id)}`).catch(console.error)
+    ctx.reply(`Chat ID: ${ctx.chat.id}`).catch(console.error)
   })

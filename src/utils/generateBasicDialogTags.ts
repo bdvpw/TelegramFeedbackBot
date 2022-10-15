@@ -14,9 +14,11 @@ function generateBasicDialogTags (ctx: Context, tags: Tags = {}): Tags {
   if (!ctx.from) return tags
 
   const fullName = `${ctx.from.first_name} ${ctx.from.last_name ?? ''}`.trim()
+  const username = ctx.from.username ? `@${ctx.from.username}` : null
+
   const object: Tags = Object.assign({
-    usernameOrName: ctx.from.username ?? ctx.from.first_name,
-    usernameOrFullName: ctx.from.username ?? fullName,
+    usernameOrName: username ?? ctx.from.first_name,
+    usernameOrFullName: username ?? fullName,
     lastName: ctx.from.first_name,
     fullName
   }, tags)
