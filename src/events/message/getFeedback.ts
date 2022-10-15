@@ -24,7 +24,10 @@ getFeedback.chatType('private').on('message', (ctx) => {
   if (userCooldown !== null && (user && (Date.now() - user) < userCooldown)) return
 
   // We inform you that the user has not chosen a language.
-  const tags = generateBasicDialogTags(ctx)
+  const tags = generateBasicDialogTags(ctx, {
+    min: minimumNumberOfCharactersInAReview.toString(),
+    max: maximumNumberOfCharactersInAReview.toString()
+  })
   const dManager = new DialogManager(ctx.from.id, ctx.chat.id)
   if (!userLanguages.has(ctx.from.id)) return dManager.send(noLanguageSelected, tags)
 
