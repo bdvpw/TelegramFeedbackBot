@@ -11,6 +11,7 @@ To get started, open the [basic.json](../src/config/basic.json) file located in 
 ## How do I find out Chat ID and Channel ID?
 It's simple! Launch the bot and invite it to a chat or channel. The information you need will be displayed in the console.
 If you have invited a bot to the chat, you can also register the command `/chatId`
+
 ![Command /chatId](./screenshots/1.png "Command /chatID")
 ![Output when the bot joins a channel or chat.](./screenshots/2.png "Output when the bot joins a channel or chat.")
 # Configuring the display of commands
