@@ -21,7 +21,7 @@ export const getFeedback = new Composer()
 getFeedback.chatType('private').on('message', (ctx) => {
   // Checking whether the user has not written the news before.
   const user = usersLeftReview.get(ctx.from.id)
-  if (userCooldown !== null && (user && (Date.now() - user) < userCooldown)) return
+  if (user && (Date.now() - user) < (userCooldown ?? Infinity)) return
 
   // We inform you that the user has not chosen a language.
   const tags = generateBasicDialogTags(ctx, {
@@ -36,7 +36,7 @@ getFeedback.chatType('private').on('message', (ctx) => {
   if (!msgContent || msgContent.length < minimumNumberOfCharactersInAReview || msgContent.length > maximumNumberOfCharactersInAReview || (attachedImage && !ctx.message.photo)) return dManager.send(shortMessage, tags)
 
   // We record the user and forward the user.
-  if (userCooldown !== null) usersLeftReview.set(ctx.from.id, Date.now())
+  usersLeftReview.set(ctx.from.id, userCooldown === null ? Infinity : Date.now())
   dManager.send(reviewPublished, tags).catch(console.error)
   if (chatIdWithReviews) ctx.forwardMessage(chatIdWithReviews).catch(console.error)
   if (channelIdWithReviews) ctx.forwardMessage(channelIdWithReviews).catch(console.error)
