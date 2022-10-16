@@ -1,5 +1,5 @@
 # Testing tools
-Okay, you have configured the configs of the bot, but you want to make sure that you did everything right? In this case, you may need some of the commands.
+Okay, you have configured the configs of the bot, but you want to make sure that you did everything right? In this case, some of these commands can help you:
 
 ## Tests
 To check if everything is correct with your configuration, enter the command: `yarn run configTest`

@@ -21,13 +21,13 @@ You can read more information [here](https://core.telegram.org/bots/api#html-sty
 ### Symbol `'`
 If you need to put the character `'`, you will encounter such a syntax error:
 ```ts
-const dialogue: = MultilingualDialogues {
+const dialogue: MultilingualDialogues = {
   EN: 'Wow, it's beautiful here!'
 }
 ```
 You can get around this by simply adding the `\` symbol before `'`:
 ```ts
-const dialogue: = MultilingualDialogues {
+const dialogue: MultilingualDialogues = {
   EN: 'Wow, it\'s beautiful here!'
 }
 ```

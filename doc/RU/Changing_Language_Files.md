@@ -21,13 +21,13 @@ const dialogue: MultilingualDialogues = {
 ### Символ `'`
 Если вам нужно поставить символ `'`, вы столкнётесь с такой синтаксической ошибкой:
 ```ts
-const dialogue: = MultilingualDialogues {
+const dialogue: MultilingualDialogues = {
   EN: 'Wow, it's beautiful here!'
 }
 ```
 Обойти это можно просто добавив перед `'` символ `\`:
 ```ts
-const dialogue: = MultilingualDialogues {
+const dialogue: MultilingualDialogues = {
   EN: 'Wow, it\'s beautiful here!'
 }
 ```
