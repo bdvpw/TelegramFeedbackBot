@@ -38,7 +38,10 @@ class TelegramClient extends Bot {
 
     const commands = Object.keys(commandsInfo)
       .filter(cmdName => commandsInfo[cmdName].show)
-      .map(cmdName => ({ command: cmdName, description: commandsInfo[cmdName].shortDescription }))
+      .filter(cmdName => {
+        if (commandsInfo[cmdName].shortDescription.length === 0) return console.warn(`[WARN] The /${cmdName} command has an empty short description.`)
+        return true
+      }).map(cmdName => ({ command: cmdName, description: commandsInfo[cmdName].shortDescription }))
 
     await this.api.setMyCommands(commands)
     console.log('[CLIENT] Information about the teams has been updated.')

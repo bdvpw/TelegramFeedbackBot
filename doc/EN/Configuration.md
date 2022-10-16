@@ -1,5 +1,5 @@
 # basic.json setup guide
-To get started, open the [basic.json](../src/config/basic.json) file located in the [src/config/](../src/config/) directory.
+To get started, open the [basic.json](../../src/config/basic.json) file located in the [src/config/](../../src/config/) directory.
 ## Properties Help
 - `DisableRootVerification` - A property that disables the check to launch a bot not from the root directory. It is recommended not to touch these properties.
 - `attachedImage` - This property indicates whether the user needs to attach an image when writing a review. The value `false` will allow the user not to attach the image.
@@ -12,10 +12,10 @@ To get started, open the [basic.json](../src/config/basic.json) file located in 
 It's simple! Launch the bot and invite it to a chat or channel. The information you need will be displayed in the console.
 If you have invited a bot to the chat, you can also register the command `/chatId`
 
-![Command /chatId](./screenshots/1.png "Command /chatID")
-![Output when the bot joins a channel or chat.](./screenshots/2.png "Output when the bot joins a channel or chat.")
+![Command /chatId](../screenshots/chatID_command.png "Command /chatID")
+![Output when the bot joins a channel or chat.](../screenshots/chatID_console.png "Output when the bot joins a channel or chat.")
 # Configuring the display of commands
-Go to the file [src/config/commandsInfo.ts](../src/config/commandsInfo.ts). Just below you will see a diagram of the commands:
+Go to the file [src/config/commandsInfo.ts](../../src/config/commandsInfo.ts). Just below you will see a diagram of the commands:
 ```ts
 start: {
   show: true,
@@ -27,5 +27,9 @@ chatID: {
 }
 ```
 - `start`, `chatID` - the names of the commands.
-- The `show` parameter is responsible for displaying the command in the Telegram. If the value is false, the command will not be offered to the user.
+- The `show` parameter is responsible for displaying the command in the Telegram. If the value is `false`, the command will not be offered to the user.
 - The `shortDescription` parameter is responsible for a brief description of the command that the user sees when calling it. **Please don't leave this line blank!!**
+
+![Displaying a brief description about the team](../screenshots/telegram_commands.png "Displaying a brief description about the team")
+
+> Back to [README.md](../../README.md)
