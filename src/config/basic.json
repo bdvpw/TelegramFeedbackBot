@@ -1,6 +1,6 @@
 {
   "DisableRootVerification": false,
-  "attachedImage": true,
+  "attachedImage": false,
   "minimumNumberOfCharactersInAReview": 20,
   "maximumNumberOfCharactersInAReview": 2040,
   "chatIdWithReviews": null,

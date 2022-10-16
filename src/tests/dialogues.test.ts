@@ -4,11 +4,16 @@ import languageSelection from '../contents/commands/start/languageSelection.dial
 import languageSelectionButtons from '../contents/commands/start/languageSelectionButtons.dialogue'
 import welcome1 from '../contents/commands/start/welcome_1.dialogue'
 import welcome2 from '../contents/commands/start/welcome_2.dialogue'
+import userCannotWriteReview from '../contents/commands/start/userCannotWriteReview.dialogue'
+import userCannotWriteReviewCooldown from '../contents/commands/start/userCannotWriteReviewCooldown.dialogue'
 
 import languageSwitched from '../contents/keyboards/languageSwitched.dialogue'
 import noLanguageSelected from '../contents/messageEvent/noLanguageSelected.dialogue'
+
 import reviewPublished from '../contents/messageEvent/reviewPublished.dialogue'
 import shortMessage from '../contents/messageEvent/shortMessage.dialogue'
+import repeatedReview from '../contents/messageEvent/repeatedReview.dialogue'
+import repeatedReviewCooldown from '../contents/messageEvent/repeatedReviewCooldown.dialogue'
 
 interface AllDialogues {
   [typeDialogue: string]: Array<[MultilingualDialogues, string]>
@@ -18,9 +23,13 @@ const allDialogues: AllDialogues = {
     [languageSelection, 'commands/start/languageSelection'],
     [welcome1, 'commands/start/welcome_1'],
     [welcome2, 'commands/start/welcome_2'],
+    [userCannotWriteReview, 'commands/start/userCannotWriteReview'],
+    [userCannotWriteReviewCooldown, 'commands/start/userCannotWriteReviewCooldown'],
     [noLanguageSelected, 'messageEvent/noLanguageSelected'],
     [shortMessage, 'messageEvent/shortMessage'],
-    [reviewPublished, 'messageEvent/reviewPublished']
+    [reviewPublished, 'messageEvent/reviewPublished'],
+    [repeatedReview, 'messageEvent/repeatedReview'],
+    [repeatedReviewCooldown, 'messageEvent/repeatedReviewCooldown']
   ],
   buttons: [
     [languageSelectionButtons, 'commands/start/languageSelectionButtons']

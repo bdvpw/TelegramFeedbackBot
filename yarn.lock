@@ -135,6 +135,11 @@
   resolved "https://registry.yarnpkg.com/@types/node/-/node-18.8.5.tgz#6a31f820c1077c3f8ce44f9e203e68a176e8f59e"
   integrity sha512-Bq7G3AErwe5A/Zki5fdD3O6+0zDChhg671NfPjtIcbtzDNZTv4NPKMRFr7gtYPG7y+B8uTiNK4Ngd9T0FTar6Q==
 
+"@types/strftime@^0.9.4":
+  version "0.9.4"
+  resolved "https://registry.yarnpkg.com/@types/strftime/-/strftime-0.9.4.tgz#a9fa386a2e8c4f344fa6e41e388081a9797ce08b"
+  integrity sha512-MlicGsqGq8pVXa0umCVrYvno0bNUH/JYGPtlAvV/oU0/0lGtAVs/EtbDi6rz3241K3MF7+l6fuXxb9Ae3nLhJQ==
+
 "@typescript-eslint/eslint-plugin@^5.0.0":
   version "5.40.0"
   resolved "https://registry.yarnpkg.com/@typescript-eslint/eslint-plugin/-/eslint-plugin-5.40.0.tgz#0159bb71410eec563968288a17bd4478cdb685bd"
@@ -1635,6 +1640,11 @@ slash@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/slash/-/slash-3.0.0.tgz#6539be870c165adbd5240220dbe361f1bc4d4634"
   integrity sha512-g9Q1haeby36OSStwb4ntCGGGaKsaVSjQ68fBxoQcutl5fS1vuY18H3wSt3jFyFtrkx+Kz0V1G85A4MyAdDMi2Q==
+
+strftime@^0.10.1:
+  version "0.10.1"
+  resolved "https://registry.yarnpkg.com/strftime/-/strftime-0.10.1.tgz#108af1176a7d5252cfbddbdb2af044dfae538389"
+  integrity sha512-nVvH6JG8KlXFPC0f8lojLgEsPA18lRpLZ+RrJh/NkQV2tqOgZfbas8gcU8SFgnnqR3rWzZPYu6N2A3xzs/8rQg==
 
 string-width@^4.1.0, string-width@^4.2.0:
   version "4.2.3"

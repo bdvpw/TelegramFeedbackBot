@@ -1,6 +1,8 @@
 import { DialogManager, userLanguages } from '../../classes/DialogManager'
 import generateBasicDialogTags from '../../utils/generateBasicDialogTags'
 import { Composer, Context } from 'grammy'
+import { usersLeftReview } from '../../events/message/getFeedback'
+import { userCooldown } from '../../config/basic.json'
 import { languages } from '../../interfaces/MultilingualDialogues'
 
 import languageSwitched from '../../contents/keyboards/languageSwitched.dialogue'
@@ -25,6 +27,10 @@ function callback (ctx: Context, language: languages): void {
   const tags = generateBasicDialogTags(ctx)
   const textAboutSuccess = DialogManager.replaceTags(languageSwitched[language] ?? languageSwitched.EN, tags)
   ctx.answerCallbackQuery(textAboutSuccess).catch(console.error)
+
+  // If the user has already written a review, we will not ask him to do it again.
+  const user = usersLeftReview.get(ctx.from.id)
+  if (user && ((userCooldown === null) || (Date.now() - user) < userCooldown)) return
 
   // We tell the user to leave a review.
   const dManager = new DialogManager(ctx.from.id, ctx.chat.id)
