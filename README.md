@@ -1,4 +1,7 @@
 # feedback-tgbot
+[![Powered by bdv.pw](https://img.shields.io/badge/powered%20by-bdv.pw-blueviolet)](https://bdv.pw/)
+![node-current](https://img.shields.io/node/v/latest)
+![version](https://img.shields.io/badge/version-1.2.0-success)
 ### Russian documentation is [here](./doc/RU/README.md)
 Telegram bot that accepts feedback from users and forwards them to the desired channel or chat. Supports multiple languages and is easily expandable.
 
