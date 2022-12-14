@@ -1,9 +1,0 @@
-{
-  "DisableRootVerification": false,
-  "attachedImage": false,
-  "minimumNumberOfCharactersInAReview": 20,
-  "maximumNumberOfCharactersInAReview": 2040,
-  "chatIdWithReviews": null,
-  "channelIdWithReviews": null,
-  "userCooldown": 86400000
-}
