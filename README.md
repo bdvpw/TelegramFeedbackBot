@@ -14,10 +14,6 @@ Telegram bot that accepts feedback from users and forwards them to the desired c
 - 🇬🇧 | English (by default)
 - 🇺🇦 | Ukraina
 - 🇴🇲 | Belarusian
-## Preparation
-1. Install [Node.js LTS](https://nodejs.org/en/).
-2. Run the `corepack enable` command. You may need to log in to CMD as an administrator if you are on Windows.
-3. Write the `yarn` command in the project folder.
 
 ## Bot preparation
 1. Create a `.env` file in the root of the project
@@ -26,6 +22,17 @@ Telegram bot that accepts feedback from users and forwards them to the desired c
 ```fix
 TELEGRAM_BOT_TOKEN=3829410421:AIO_dhjlskAJKLDJlkd_S9d879S
 ```
+
+## Quick start with Docker.
+1. Create an image: `docker build -t feedback-tgbot .`
+2. Run it: `docker run -d --env-file=.env feedback-tgbot`
+
+## Preparation
+1. Install [Node.js LTS](https://nodejs.org/en/).
+2. Run the `corepack enable` command. You may need to log in to CMD as an administrator if you are on Windows.
+3. Write the `yarn` command in the project folder.
+
+
 ## Launching the bot
 - Enter the command `yarn run start`
 ---
