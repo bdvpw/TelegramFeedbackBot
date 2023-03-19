@@ -12,8 +12,8 @@ Telegram bot that accepts feedback from users and forwards them to the desired c
 - 🇷🇺 | Russian
 - 🇵🇱 | Polish
 - 🇬🇧 | English (by default)
-- 🇺🇦 | Ukraina
-- 🇴🇲 | Belarusian
+- 🇺🇦 | Ukrainian
+- 🇧🇾 | Belarusian
 
 ## Bot preparation
 1. Create a `.env` file in the root of the project
